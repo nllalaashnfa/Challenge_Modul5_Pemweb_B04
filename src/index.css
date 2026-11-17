@@ -1,0 +1,199 @@
+
+/* WARNA TEMA */
+:root {
+  --blush: #f9edf0;
+  --champagne: #e6c8b7;
+  --cognac: #c3955b;
+  --amber: #ba6a36;
+  --emerald: #1c3934;
+  --espresso: #261311;
+}
+
+/* TAMPILAN DASAR */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--blush);
+  color: var(--espresso);
+}
+
+/* CONTAINER UTAMA */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* HEADER */
+header {
+  background-color: var(--emerald);
+  color: var(--blush);
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0 0 10px;
+}
+
+header p {
+  color: var(--champagne);
+  margin: 0;
+}
+
+/* FORM DAN DAFTAR CATATAN */
+.note-form,
+.notes-section {
+  background-color: var(--champagne);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  border: 1px solid var(--cognac);
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-form h2,
+.notes-section h2 {
+  margin-top: 0;
+  color: var(--espresso);
+}
+
+/* LABEL */
+label {
+  font-weight: bold;
+}
+
+/* INPUT, TEXTAREA, SELECT */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cognac);
+  border-radius: 8px;
+  background-color: var(--blush);
+  color: var(--espresso);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--amber);
+}
+
+/* TOMBOL TAMBAH */
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.note-form button {
+  background-color: var(--emerald);
+  color: var(--blush);
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* PENCARIAN */
+.search-input {
+  margin-bottom: 20px;
+}
+
+/* DAFTAR CATATAN */
+.notes-list {
+  display: grid;
+  gap: 15px;
+}
+
+/* KARTU CATATAN */
+.note-card {
+  background-color: var(--blush);
+  border: 1px solid var(--cognac);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.note-header h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* KATEGORI */
+.category {
+  background-color: var(--cognac);
+  color: var(--espresso);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ISI CATATAN */
+.note-card p {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* TOMBOL HAPUS */
+.delete-btn {
+  background-color: var(--amber);
+  color: var(--espresso);
+  margin-top: 10px;
+}
+
+/* PESAN CATATAN KOSONG */
+.empty-message {
+  text-align: center;
+  color: var(--espresso);
+  padding: 20px;
+}
+
+/* TAMPILAN LAYAR KECIL */
+@media (max-width: 600px) {
+  .container {
+    margin: 15px auto;
+    padding: 12px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .note-form,
+  .notes-section {
+    padding: 18px;
+  }
+}
