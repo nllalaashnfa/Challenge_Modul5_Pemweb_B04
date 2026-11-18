@@ -1,12 +1,29 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Note } from "./types/note";
 import NoteForm from "./components/NoteForm";
 import NoteCard from "./components/NoteCard";
+import PostList from "./components/PostList";
+
+const STORAGE_KEY = "notes";
+
+// Baca catatan tersimpan; data rusak/kosong dianggap daftar kosong
+const loadNotes = (): Note[] => {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "[]");
+  } catch {
+    return [];
+  }
+};
 
 export default function App() {
-  const [notes, setNotes] = useState<Note[]>([]);
+  const [notes, setNotes] = useState<Note[]>(loadNotes);
   const [search, setSearch] = useState("");
+
+  // Simpan ke localStorage setiap catatan berubah
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+  }, [notes]);
 
   // Fungsi menambahkan catatan
   const addNote = (
@@ -74,6 +91,8 @@ export default function App() {
           )}
         </div>
       </section>
+
+      <PostList />
     </main>
   );
 }
